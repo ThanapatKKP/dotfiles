@@ -1,14 +1,11 @@
 bottom
 exa
-fftw
 git
 go
-htop
 iniparser
 lazygit
 neofetch
 neovim
-node
 node@16
 portaudio
 ripgrep
