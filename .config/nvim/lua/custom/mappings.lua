@@ -7,14 +7,6 @@ M.dap = {
       "<cmd> DapToggleBreakpoint <CR>",
       "Add breakpoint at line"
     },
-    ["<leader>dus"] = {
-      function ()
-        local widgets = require('dap.ui.widgets');
-        local sidebar = widgets.sidebar(widgets.scopes);
-        sidebar.open();
-      end,
-      "Open debugging sidebar"
-    },
     ["<F5>"] = {
       function()
         require('dap').continue();
@@ -70,7 +62,11 @@ M.gopher = {
     ["<leader>gsy"] = {
       "<cmd> GoTagAdd yaml <CR>",
       "Add yaml struct tags"
-    }
+    },
+    ["<leader>ger"] = {
+      "<cmd> GoIfErr <CR>",
+      "Add Error Handling"
+    },
   }
 }
 
@@ -92,8 +88,35 @@ M.panes = {
       "<C-w>l",
       "Move to the right pane"
     }
+  }
+}
 
-
+M.neotest = {
+  n = {
+    ["<leader>t"] = {
+      "<cmd>lua require('neotest').run.run()<CR>",
+      "Run the nearest test"
+    },
+    ["<leader>tf"] = {
+      "<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<CR>",
+      "Run the current file"
+    },
+    ["<leader>tc"] = {
+      "<cmd>lua require('neotest').run.run(vim.fn.getcwd())<CR>",
+      "Run test suite"
+    },
+    ["<leader>tt"] = {
+      "<cmd>lua require('neotest').run.stop()<CR>",
+      "Stop the test"
+    },
+    ["<leader>to"] = {
+      "<cmd>lua require('neotest').output_panel.toggle()<CR>",
+      "Toggle test output"
+    },
+    ["<leader>tq"] = {
+      "<cmd>lua require('neotest').summary.toggle()<CR>",
+      "Toggle test summary"
+    },
   }
 }
 

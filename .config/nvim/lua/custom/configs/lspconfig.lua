@@ -20,3 +20,17 @@ lspconfig.gopls.setup {
     },
   },
 }
+
+-- Set the correct indent spacing for Go files
+vim.api.nvim_exec([[
+  augroup GoIndent
+    autocmd!
+    autocmd FileType go setlocal shiftwidth=4 tabstop=4
+  augroup END
+]], true)
+
+lspconfig.pyright.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = {"python"},
+})
